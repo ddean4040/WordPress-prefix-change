@@ -1,6 +1,6 @@
 #!/bin/bash
 
-echo "Enter the path to your wp-config.php file: "
+echo "Enter the path to your WordPress install: "
 read WP_CONFIG_PATH
 
 # Quick hack to make PHP var available
@@ -8,7 +8,7 @@ table_prefix='$table_prefix'
 
 DB_DETAILS=(`/usr/bin/env php <<EOL
 <?php
-require "$WP_CONFIG_PATH/wp-config.php";
+require "$WP_CONFIG_PATH/wp-load.php";
 echo DB_USER . "\n";
 echo DB_PASSWORD . "\n";
 echo DB_NAME . "\n";

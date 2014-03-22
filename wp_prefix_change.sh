@@ -92,7 +92,7 @@ echo "Changing the prefix in the wp-config.php file..."
 
 WP_CONFIG_FILE="$WP_CONFIG_PATH""/wp-config.php"
 
-sed -i -e "s/$DB_PREFIX/$NEW_PREFIX/g" $WP_CONFIG_FILE
+sed -i --follow-symlinks -e "s/$DB_PREFIX/$NEW_PREFIX/g" $WP_CONFIG_FILE
 
 
 echo "Done!"

@@ -69,6 +69,11 @@ if [ ${NEW_PREFIX:-1} != '_' ]; then
 	NEW_PREFIX+="_"
 fi
 
+if [ $NEW_PREFIX == $DB_PREFIX ]; then
+	echo "The database prefix you entered is already the active prefix"
+	exit
+fi
+
 echo "Renaming tables..."
 
 for (( idx=1; idx<${#TABLES[@]}; idx++ ))
